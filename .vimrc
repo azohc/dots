@@ -1,1 +1,1 @@
-.vimrc
+/home/azohc/.vimrc

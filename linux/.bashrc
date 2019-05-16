@@ -1,1 +1,1 @@
-.bashrc
+/home/azohc/.bashrc
