@@ -1,1 +1,12 @@
-/home/azohc/.config/sublime-text-3/Packages/User/Preferences.sublime-settings
+{
+	"color_scheme": "Packages/Dracula Color Scheme/Dracula.tmTheme",
+	"font_face": "Inconsolata",
+	"font_size": 16,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"menu_visible": false,
+	"show_minimap": false,
+	"theme": "Adaptive.sublime-theme"
+}

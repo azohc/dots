@@ -1,1 +1,2 @@
-/home/azohc/.vimrc
+syntax on
+color dracula
