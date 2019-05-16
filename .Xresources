@@ -21,10 +21,10 @@ Xft.rgba:               rgb
 Xft.hinting:            true
 Xft.hintstyle:          hintslight
 URxvt.allow_bold:       true                                        
-URxvt.font: 			xft:Anonymous Pro:style=Regular:size=17
-URxvt.boldFont:         xft:Anonymous Pro:style=Bold:size=17  
+URxvt.font: 			xft:Fixedsys Excelsior 3.01\-L2 Mono Pro:style=Regular:size=17
+URxvt.boldFont:         xft:Fixedsys Excelsior 3.01\-L2 Mono Pro:style=Bold:size=17  
 
-URxvt.letterSpace: 0
+URxvt.letterSpace: -2
 URxvt.lineSpace: 2
 
 
@@ -124,7 +124,7 @@ URxvt.matcher.button: 1
  rofi.lines:                          	5
 
 ! "Font to use" Set from: XResources
-rofi.font:                        		Anonymous Pro Regular 14
+rofi.font:                        		Fixedsys Excelsior 3.01 14
 
 ! "Border width" Set from: Default
  rofi.bw:                             	1

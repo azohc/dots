@@ -1,27 +1,27 @@
 [   {
         "class": "quick_panel_label",
         "parents": [{"class": "mini_quick_panel_row"}],
-        "font.face": "Anonymous Pro",
+        "font.face": "Fixedsys Excelsior 3.01",
         "font.size": 18
     },
     {
         "class": "sidebar_heading",
-        "font.face": "Anonymous Pro",
+        "font.face": "Fixedsys Excelsior 3.01",
         "font.size": 18
     },
     {
         "class": "sidebar_label",
-        "font.face": "Anonymous Pro",
+        "font.face": "Fixedsys Excelsior 3.01",
         "font.size": 16
     },
     {
         "class": "tab_label",
-        "font.face": "Anonymous Pro",
+        "font.face": "Fixedsys Excelsior 3.01",
         "font.size": 16
     },
     {
         "class": "label_control",
-        "font.face": "Anonymous Pro",
+        "font.face": "Fixedsys Excelsior 3.01",
         "font.size": 16
     }
 ]
