@@ -23,7 +23,7 @@ bar {
 	position top
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     
-    font xft:Fixedsys Excelsior 3.01 14
+    font xft:Fixedsys Excelsior 3.01 12
 
     separator_symbol "<"
 
