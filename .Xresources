@@ -87,7 +87,7 @@ URxvt.matcher.button: 1
 
 *color0:       base00
 *color1:       base08
-*color2:       #433B3B
+*color2:       base0C
 *color3:       base0A
 *color4:       base0D
 *color5:       base0E
