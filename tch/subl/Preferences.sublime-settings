@@ -1,0 +1,21 @@
+{
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-dracula.tmTheme",
+	"font_face": "Fixedsys Excelsior 3.01-L",
+	"font_size": 14,
+	"ignored_packages":
+	[
+		"Chain of Command",
+		"Dracula Color Scheme",
+		"Material Theme",
+		"PackageResourceViewer",
+		"Vintage"
+	],
+	"material_theme_accent_graphite": true,
+	"material_theme_compact_sidebar": true,
+	"material_theme_disable_folder_animation": true,
+	"material_theme_small_tab": true,
+	"material_theme_tabs_autowidth": true,
+	"menu_visible": false,
+	"show_minimap": false,
+	"theme": "Adaptive.sublime-theme"
+}
