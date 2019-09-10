@@ -55,7 +55,6 @@ bindsym $mod+a exec anki
 bindsym $mod+g exec vivaldi-stable
 bindsym $mod+z exec sudo subl
 bindsym $mod+shift+z exec sudo subl -n ~/dots/
- 
 bindsym $mod+d exec rofi -show run -display-run "run: "
 bindsym $mod+t exec nautilus
 bindsym $mod+c exec code
