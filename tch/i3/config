@@ -74,9 +74,7 @@ floating_modifier $mod
 
 focus_follows_mouse no
 
-# start firefox
 bindsym $mod+g exec vivaldi-stable
-
 bindsym $mod+n exec nautilus
 bindsym $mod+shift+Return exec ~/mega/bin/ntermswd.sh
 
@@ -291,6 +289,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 20; notify-send 'brightness 
 # Autostart applications
 exec --no-startup-id megasync
 exec feh --bg-fill ~/img/walls/wallhaven-619178.jpg
+exec nm-applet
 
 #save workspace
 bindsym $mod+shift+w exec i3-save-tree > ~/.config/i3/workspaces/autosave.json
