@@ -48,12 +48,10 @@ focus_follows_mouse no
 hide_edge_borders smart
 
 # azohc binds
-bindsym $mod+a exec anki
-bindsym $mod+g exec vivaldi-stable
+bindsym $mod+g exec firefox
 bindsym $mod+z exec sudo subl
 bindsym $mod+shift+z exec sudo subl -n ~/dots/
 bindsym $mod+t exec nautilus
-bindsym $mod+c exec code
 bindsym $mod+Return exec urxvt
 bindsym $mod+Shift+Return exec ~/mega/bin/ntermswd.sh
 
