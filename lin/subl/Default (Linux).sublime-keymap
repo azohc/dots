@@ -1,0 +1,8 @@
+[
+	{ "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["alt+f11"], "command": "distraction_free_window" },
+	{ "keys": ["ctrl+m"], "command": "toggle_menu" },
+	{ "keys": ["ctrl+shift+9"], "command": "move_to", "args": {"to": "brackets"} },
+	{ "keys": ["ctrl+space"], "command": "file_system_comp_trigger"}
+]
