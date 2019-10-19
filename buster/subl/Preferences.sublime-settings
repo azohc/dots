@@ -1,0 +1,13 @@
+{
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-ashes.tmTheme",
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"font_size": 14,
+	"font_face": "Inconsolata",
+	"theme": "Adaptive.sublime-theme",
+	"menu_visible": false,
+	"show_minimap": false,
+	"theme": "Adaptive.sublime-theme"
+}
