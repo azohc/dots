@@ -1,35 +1,8 @@
 [
-  { "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": false } },
-  { "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+7"], "command": "toggle_comment", "args": { "block": true } },
 	{ "keys": ["ctrl+m"], "command": "toggle_menu" },
 	{ "keys": ["ctrl+shift+9"], "command": "pass"},
 	{ "keys": ["ctrl+space"], "command": "file_system_comp_trigger"},
-
-	// >> Sidebar
-  // sidebar toggler.
-  // dependencies: 'chain of command'
-
-  // show sidebar (if hidden), focus current open file in sidebar
-  { "keys": ["ctrl+alt+s"], "command": "chain", 
-    "args": {
-      "commands": [
-        ["toggle_side_bar"],
-        ["reveal_in_side_bar"],
-        ["focus_side_bar"]
-      ]
-    }
-    , "context": [ {"key": "control", "operator": "not_equal", "operand": "sidebar_tree"} ]
-  },
-
-  // hide sidebar (if it is active), focus main window
-  { "keys": ["ctrl+alt+s"], "command": "chain", 
-    "args": {
-      "commands": [
-        ["toggle_side_bar"],
-        ["focus_group", { "group": 0 }]
-      ]
-    }
-    , "context": [ {"key": "control", "operator": "equal", "operand": "sidebar_tree"} ]
-  },
-
+	{ "keys": ["ctrl+alt+s"], "command": "toggle_side_bar"},
 ]
