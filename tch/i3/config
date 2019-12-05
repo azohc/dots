@@ -190,10 +190,13 @@ for_window [class="GParted"] floating enable border pixel 1
 for_window [class="(?i)System-config-printer.py"] floating enable border pixel 1
 for_window [class="Firefox" title="Open File"] floating enable border pixel 1
 for_window [class="Firefox" title="File Upload"] floating enable border pixel 1
-
+for_window [title=".*Projucer"] move scratchpad
 
 # Resize applications
 for_window [class="(?i)Firefox" title="Open File"] resize set 700 300  
+for_window [title=".*Projucer"] resize set 900 720 
+for_window [title=".*Projucer"] position set 30 420 
+
 
 # switch to workspace with urgent window automatically
 #for_window [urgent=latest] focus
