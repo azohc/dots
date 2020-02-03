@@ -120,8 +120,12 @@ export PATH=$PATH:~/mega/bin:~/
 export PATH=/usr/lib/jvm/jdk-13.0.1/bin:$PATH
 export PATH=/home/chosa/.config/i3ass/src:$PATH
 
+# pwd doubleline $
 # export PS1="╭╴\[\033[38;5;9m\]\u@\h\[\e[m\]\[\e[38;5;12m\]:\w\[\e[m\]\n╰╴\[\033[38;5;10m\]\\$ \[$(tput sgr0)\]"
+# pwd $
 export PS1="\[\033[38;5;9m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\\$ \[$(tput sgr0)\]"
+# no pwd
+#export PS1="\[$(tput sgr0)\]\[\033[38;5;10m\]\\$ \[$(tput sgr0)\]"
 
 stty -ixon
 

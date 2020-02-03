@@ -17,5 +17,8 @@
 	"material_theme_tabs_autowidth": true,
 	"menu_visible": false,
 	"show_minimap": false,
-	"theme": "Adaptive.sublime-theme"
+	"theme": "Adaptive.sublime-theme",
+	"tab_size": 2,
+  "translate_tabs_to_spaces": true
+
 }
