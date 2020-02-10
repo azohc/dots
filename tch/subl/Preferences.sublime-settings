@@ -1,7 +1,7 @@
 {
 	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-snazzy.tmTheme",
 	"font_face": "Fixedsys Excelsior 3.01-L",
-	"font_size": 14,
+	"font_size": 13,
 	"ignored_packages":
 	[
 		"Chain of Command",
@@ -17,8 +17,7 @@
 	"material_theme_tabs_autowidth": true,
 	"menu_visible": false,
 	"show_minimap": false,
-	"theme": "Adaptive.sublime-theme",
 	"tab_size": 2,
-  "translate_tabs_to_spaces": true
-
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true
 }
