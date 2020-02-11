@@ -305,7 +305,7 @@ exec nm-applet
 bindsym $mod+shift+w exec i3-save-tree > ~/.config/i3/workspaces/autosave.json
 
 # restore workspaces
-exec --no-startup-id ~/mega/bin/loadws.sh
+exec --no-startup-id ~/mega/bin/loadws
 
 # Urxvt reload
 exec_always xrdb -load ~/.Xresources
