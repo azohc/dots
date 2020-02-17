@@ -1,0 +1,98 @@
+// vim:ts=4:sw=4:et
+{
+    // this is a manually added container to restore the vertical split
+    "layout": "splith",
+    "percent": 0.5,
+    "type": "con",
+    "nodes": [
+      {
+          // splitv split container with 2 children
+          "layout": "splitv",
+          "percent": 0.55,
+          "type": "con",
+          "nodes": [
+              {
+                  "geometry": {
+                     "height": 577,
+                     "width": 1344,
+                     "x": 11,
+                     "y": 37
+                  },
+                  "name": "Build a Modern JS Project - #8 Module Systems - YouTube - Vivaldi",
+                  "percent": 0.75,
+                  "swallows": [
+                     {
+                      "class": "^Vivaldi\\-stable$"
+                     }
+                  ],
+                  "type": "con"
+              },
+              {
+                  "geometry": {
+                     "height": 476,
+                     "width": 764,
+                     "x": 0,
+                     "y": 0
+                  },
+                  "name": "urxvt",
+                  "percent": 0.25,
+                  "swallows": [
+                     {
+                       "class": "^URxvt$"
+                     }
+                  ],
+                  "type": "con"
+              }
+          ]
+      },
+      {
+          "geometry": {
+             "height": 463,
+             "width": 1344,
+             "x": 0,
+             "y": 0
+          },
+          "name": "untitled (git) - Sublime Text (UNREGISTERED)",
+          "percent": 0.45,
+          "swallows": [
+             {
+              "class": "^Sublime_text$"
+             }
+          ],
+          "type": "con"
+      }
+    ]
+}
+
+{
+    // floating_con with 1 children
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 208,
+       "width": 415,
+       "x": 911,
+       "y": 511
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "geometry": {
+               "height": 476,
+               "width": 764,
+               "x": 0,
+               "y": 0
+            },
+            "name": "projecterm",
+            "percent": 1,
+            "swallows": [
+               {
+                 "class": "^URxvt$",
+                 "title": "^projecterm$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
