@@ -36,6 +36,8 @@ bar {
 
     separator_symbol "<>"
     
+    strip_workspace_numbers yes
+
     # Uncomment to hide tray icons
     # tray_output none
 
@@ -201,17 +203,20 @@ for_window [class="(?i)Firefox" title="Open File"] resize set 700 300
 for_window [title=".*Projucer"] resize set 900 720 
 for_window [title=".*Projucer"] move to position 30 420 
 for_window [instance="urxvt" title="youtube-dl"] floating enable border pixel 1
-for_window [instance="urxvt" title="youtube-dl"] resize set 333 211
-for_window [instance="urxvt" title="youtube-dl"] move to 511 511
+for_window [instance="urxvt" title="youtube-dl"] resize set 666 111
+for_window [instance="urxvt" title="youtube-dl"] move to position 22 622
 for_window [instance="urxvt" title="projecterm"] floating enable border pixel 1
 for_window [instance="urxvt" title="projecterm"] resize set 411 211
-for_window [instance="urxvt" title="projecterm"] move to position 911 511
-
+for_window [instance="urxvt" title="projecterm"] move to position 911 522
+for_window [class="Transmission-gtk"] floating enable border pixel 1
+for_window [class="Transmission-gtk"] resize set 666 400
+for_window [class="Transmission-gtk"] move to position 444 111
+assign [class="Transmission-gtk"] → 
 # Toggle floating/tiling
-bindsym $mod+t floating toggle
+bindsym $mod+shift+t floating toggle
 
 # Focus last floating/tiling container
-bindsym $mod+shift+t focus mode_toggle
+bindsym $mod+t focus mode_toggle
 
 # switch to workspace with urgent window automatically
 #for_window [urgent=latest] focus
@@ -321,7 +326,7 @@ exec_always xrdb -load ~/.Xresources
 exec xbacklight -set 36
 
 # Transparency with compton
-# exec_always compton --config ~/.config/compton.conf
+exec_always "killall -p compton; compton --config ~/.config/compton.conf"
 
 # terminal 
 bindsym $mod+Return exec urxvt
