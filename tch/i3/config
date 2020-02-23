@@ -212,6 +212,11 @@ for_window [class="Transmission-gtk"] floating enable border pixel 1
 for_window [class="Transmission-gtk"] resize set 666 400
 for_window [class="Transmission-gtk"] move to position 444 111
 assign [class="Transmission-gtk"] → 
+for_window [instance="gnuradio-companion" title="Properties"] move to position 600 200
+for_window [instance="top_block.py" title="Top Block"] floating enable 1
+for_window [instance="top_block.py" title="Top Block"] move to position 444 111
+
+
 # Toggle floating/tiling
 bindsym $mod+shift+t floating toggle
 
