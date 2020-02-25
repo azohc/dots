@@ -133,15 +133,10 @@ bindsym $mod+ctrl+space floating toggle
 bindsym $mod+shift+space move scratchpad
 
 # change focus between tiling / floating windows
-#bindsym $mod+space focus mode_toggle
-bindsym $mod+space scratchpad show
+bindsym $mod+shift+f scratchpad show
 
 # focus the parent container
 bindsym $mod+a focus parent
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym $mod+minus scratchpad show
 
 # workspaces
 set $ws1 ""
@@ -349,7 +344,7 @@ bindsym $mod+c exec urxvt -e cmatrix -C red
 # Gaps
 gaps inner 11
 gaps outer 0
-# smart_gaps on #if only 1 window => no gaps
+smart_gaps on #if only 1 window => no gaps
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
