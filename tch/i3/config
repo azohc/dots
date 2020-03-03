@@ -13,6 +13,7 @@ set $text-color          #ebde9e
 set $inactive-text-color #79818C
 set $urgent-bg-color     #283650
 
+
 #set $bg-color            #b64735
 #set $inactive-bg-color   #231e18
 #set $text-color          #ebde9e
@@ -75,8 +76,8 @@ bindsym $mod+shift+z exec subl -n "~/.config/sublime-text-3/Packages/User/Defaul
 popup_during_fullscreen leave_fullscreen
 
 #screenshots
-bindsym --release Print exec --no-startup-id  scrot -e 'mv $f ~/pix/sshots/'
-bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/pix/sshots/'
+bindsym --release Print exec --no-startup-id  scrot -e 'mv $f ~/img/sshots/'
+bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/sshots/'
 
 floating_modifier $mod
 
@@ -148,7 +149,7 @@ set $ws6 ""
 set $ws7 "VII"
 set $ws8 "VIII"
 set $ws9 "IX"
-set $ws10 "X"
+set $ws10 "X" #""
 
 # switch to workspace 
 bindsym $mod+1 workspace $ws1
@@ -201,7 +202,7 @@ for_window [instance="urxvt" title="youtube-dl"] floating enable border pixel 1
 for_window [instance="urxvt" title="youtube-dl"] resize set 666 111
 for_window [instance="urxvt" title="youtube-dl"] move to position 22 622
 for_window [instance="urxvt" title="projecterm"] floating enable border pixel 1
-for_window [instance="urxvt" title="projecterm"] resize set 411 211
+for_window [instance="urxvt" title="projecterm"] resize set 411 111
 for_window [instance="urxvt" title="projecterm"] move to position 911 522
 for_window [class="Transmission-gtk"] floating enable border pixel 1
 for_window [class="Transmission-gtk"] resize set 666 400
@@ -210,6 +211,9 @@ assign [class="Transmission-gtk"] → 
 for_window [instance="gnuradio-companion" title="Properties"] move to position 600 200
 for_window [instance="top_block.py" title="Top Block"] floating enable 1
 for_window [instance="top_block.py" title="Top Block"] move to position 444 111
+for_window [class="Nautilus"] floating enable border pixel 1
+for_window [instance="feh"] floating enable border pixel 1
+
 
 
 # Toggle floating/tiling
@@ -312,9 +316,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 exec --no-startup-id megasync
 exec feh --bg-fill ~/img/walls/wallhaven-619178.jpg
 exec nm-applet
-
-#save workspace
-bindsym $mod+shift+w exec i3-save-tree > ~/.config/i3/workspaces/autosave.json
+exec ~/mega/bin/taptoclick
 
 # restore workspaces
 exec --no-startup-id ~/mega/bin/loadws
