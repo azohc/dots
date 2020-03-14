@@ -1,95 +1,7 @@
-# tocheeba dots
-
-#  "~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap" /home/chosa/.config/sublime-text-3/Packages/User/Preferences.sublime-settings  ~/.config/sublime-text-3/Packages/User/Adaptive.sublime-theme ~/.config/user-dirs.dirs /usr/share/rofi/themes/Monokai.rasi  ~/.config/rofi/config ~/.config/compton.conf ~/.bashrc ~/.Xresources ~/.config/i3/i3blocks.conf ~/.config/i3/config 
-
-set $bin ~/mega/bin
-
-set $mod Mod4
-
-# Theme colors
-set $bg-color            #d83344
-set $inactive-bg-color   #231117
-set $text-color          #ebde9e
-set $inactive-text-color #79818C
-set $urgent-bg-color     #283650
-
-
-#set $bg-color            #b64735
-#set $inactive-bg-color   #231e18
-#set $text-color          #ebde9e
-#set $inactive-text-color #c99e5e
-#set $urgent-bg-color     #bc5f3b
-
-# window colors
-#                       border              background          text                  indicator
-client.focused          $bg-color           $bg-color           $text-color           $bg-color
-client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color  $inactive-bg-color
-client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color  $inactive-bg-color
-client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color           $urgent-bg-color
-
-for_window [class="^.*"] border pixel 1
-
-bar {
-    
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-    position top
-
-    separator_symbol "<>"
-    
-    strip_workspace_numbers yes
-
-    # Uncomment to hide tray icons
-    # tray_output none
-
-    # font xft: FixedsysExcelsiorIIIb Nerd Font 12
-
-    font pango: Font Awesome 5 Free 12, FixedsysExcelsiorIIIb Nerd Font 12
-
-
-    height 26
-
-    colors{
-
-        background $inactive-bg-color
-        separator $bg-color
-        #                  border             bg                  text
-        focused_workspace  $inactive-bg-color $inactive-bg-color  $bg-color
-        inactive_workspace $inactive-bg-color $inactive-bg-color  $inactive-text-color
-        urgent_workspace   $urgent-bg-color   $urgent-bg-color    $text-color
-    }
-}
-
-new_window pixel 4
-new_float normal
-hide_edge_borders smart
-
-
-#font xft:URWGothic-Book 12
-#font xft:Monospace 12
-font xft:Fixedsys Excelsior 3.01-L 12
-
-# open dotfiles
-bindsym $mod+z exec subl
-bindsym $mod+shift+z exec subl -n "~/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap" /home/chosa/.config/sublime-text-3/Packages/User/Preferences.sublime-settings  ~/.config/sublime-text-3/Packages/User/Adaptive.sublime-theme ~/.config/user-dirs.dirs /usr/share/rofi/themes/Monokai.rasi  ~/.config/rofi/config ~/.config/compton.conf ~/.bashrc ~/.Xresources ~/.config/i3/i3blocks.conf ~/.config/i3/config
- 
-popup_during_fullscreen leave_fullscreen
-
-#screenshots
-bindsym --release Print exec --no-startup-id  scrot -e 'mv $f ~/img/sshots/'
-bindsym --release Shift+Print exec --no-startup-id scrot -s -e 'mv $f ~/img/sshots/'
-
-floating_modifier $mod
-
-# jump to urgent window
-bindsym $mod+x [urgent=latest] focus
-
-# focus ignores mouse
-focus_follows_mouse no
 
 bindsym $mod+g exec vivaldi-stable
 bindsym $mod+n exec nautilus -w
-bindsym $mod+shift+Return exec ~/mega/bin/ntermswd.sh
+bindsym $mod+shift+Return exec bin/ntermswd.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -280,10 +192,10 @@ mode "resize" {
         bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Left resize shrink width 15 px or 15 ppt
+        bindsym Down resize grow height 11 px or 11 ppt
+        bindsym Up resize shrink height 11 px or 11 ppt
+        bindsym Right resize grow width 15 px or 15 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
