@@ -367,14 +367,19 @@ set $text-color          #FFD5D3
 set $inactive-text-color #EC967F
 set $urgent-bg-color     #FFB459
 
-# class                 border   bground  text        indicator child_border
-client.focused          ^r@V^   ^r@V^     ^r@V>ttc^   ^r@LV^    ^r@V^
-client.focused_inactive ^r@bg^  ^r@bg^    ^r@bg>ttc^  ^r@DV^    ^r@DM^
-client.unfocused        ^r@bg^  ^r@bg^    ^r@V^       ^r@DV^    ^r@DM^
-client.urgent           ^r@LV^  ^r@bg^    ^r@bg>ttc^  ^r@DV^    ^r@LV^
-client.placeholder      ^r@bg^  ^r@bg^    ^r@bg>ttc^  ^r@DV^    ^r@DM^
+# marronsito
+#set $bg-color            #b64735
+#set $inactive-bg-color   #231e18
+#set $text-color          #ebde9e
+#set $inactive-text-color #c99e5e
+#set $urgent-bg-color     #bc5f3b
 
-client.background       ^r@V^
+#                       border              background          text                  indicator
+client.focused          $bg-color           $bg-color           $text-color           $bg-color
+client.unfocused        $inactive-bg-color  $inactive-bg-color  $inactive-text-color  $inactive-bg-color
+client.focused_inactive $inactive-bg-color  $inactive-bg-color  $inactive-text-color  $inactive-bg-color
+client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color           $urgent-bg-color
+
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -423,18 +428,15 @@ client.background       ^r@V^
     separator_symbol " "
     font pango: Bitstream Vera Sans Mono 12
  
-    strip_workspace_numbers yes
+     strip_workspace_numbers yes
 
-    colors {
-        background ^r@bg^
-        statusline ^r@LM^
-        separator  ^r@DM^
-
-        focused_workspace  ^r@V^    ^r@V^       ^r@V>ttc^
-        active_workspace   ^r@bg^   ^r@bg^      ^r@V^
-        inactive_workspace ^r@bg^   ^r@bg^      ^r@LM^
-        urgent_workspace   ^r@bg^   ^r@LV^      ^r@LV>ttc^
-        binding_mode       ^r@bg^   ^r@LV^      ^r@LV>ttc^
+     colors{
+        background $inactive-bg-color
+        separator $bg-color
+        #                  border             bg                  text
+        focused_workspace  $inactive-bg-color $inactive-bg-color  $bg-color
+        inactive_workspace $inactive-bg-color $inactive-bg-color  $inactive-text-color
+        urgent_workspace   $urgent-bg-color   $urgent-bg-color    $text-color
     }
  # ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
  # #    tray_output primary
