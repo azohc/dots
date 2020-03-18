@@ -64,5 +64,3 @@ get_session(){
 }
 
 exec $(get_session)
-
-xset +fp /usr/share/fonts/TTF

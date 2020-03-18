@@ -1,0 +1,12 @@
+{
+	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-atelier-lakeside.tmTheme",
+	"font_face": "Bitstream Vera Sans Mono",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"menu_visible": false,
+	"show_minimap": false,
+	"theme": "Adaptive.sublime-theme"
+}

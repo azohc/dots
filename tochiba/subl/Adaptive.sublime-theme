@@ -1,0 +1,25 @@
+[	{
+        "class": "sidebar_heading",
+        "font.size": 13,
+        "font.bold": true,
+        "font.size": 18,
+        "font.face": "Bitstream Vera Sans Mono"
+        },
+	{
+        "class": "sidebar_label",
+        "fg": ["background", 255, 255, 255, 0.8],
+        "font.size": 16,
+        "font.face": "Bitstream Vera Sans Mono"
+	},
+	{
+        "class": "tab_label",
+        "font.size": 16,
+        "font.face": "Bitstream Vera Sans Mono"
+    },
+    {
+        "class": "label_control",
+        "parents": [{"class": "status_bar"}],
+        "font.size": 16,
+        "font.face": "Bitstream Vera Sans Mono"
+    }
+]

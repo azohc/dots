@@ -1,0 +1,8 @@
+[
+	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": false } },
+	{ "keys": ["ctrl+shift+c"], "command": "toggle_comment", "args": { "block": true } },
+	{ "keys": ["ctrl+m"], "command": "toggle_menu" },
+	{ "keys": ["ctrl+shift+9"], "command": "pass"},
+	{ "keys": ["ctrl+space"], "command": "file_system_comp_trigger"},
+	{ "keys": ["ctrl+alt+s"], "command": "toggle_side_bar"},
+]

@@ -138,12 +138,9 @@ ex ()
   fi
 }
 
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # export PS1="╭╴\[\033[38;5;10m\]\u@\h\[\e[m\]\[\e[38;5;12m\]:\w\[\e[m\]\n╰╴\[\033[38;5;10m\]\\$ \[$(tput sgr0)\]"
 # export PS1="\[\033[38;5;9m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;10m\]\\$ \[$(tput sgr0)\]"
 
-export PATH=$PATH:~/mega/bin
+export PATH=$PATH:~/.bin
+
