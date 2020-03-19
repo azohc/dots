@@ -1,0 +1,9 @@
+configuration {
+    lines: 12;
+    font: "Bitstream Vera Sans Mono 12";
+    show-icons: true;
+    display-window: "Window";
+    display-drun: "Search";
+    theme: "~/.cache/wal/colors-rofi-dark.rasi";
+	theme: "~/.cache/wal/colors-rofi-light.rasi";
+}
