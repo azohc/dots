@@ -72,6 +72,8 @@ else
 	icon=${state_icons["generic"]}
 fi
 
-echo "$icon $temp en $city"
-# echo "$temp"
-# echo
+if [ ! -z "$temp" ]; then
+	echo "$icon $temp en $city"
+else 
+	echo "dc"
+fi

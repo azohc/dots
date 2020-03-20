@@ -5,5 +5,4 @@ configuration {
     display-window: "Window";
     display-drun: "Search";
     theme: "~/.cache/wal/colors-rofi-dark.rasi";
-	theme: "~/.cache/wal/colors-rofi-light.rasi";
 }

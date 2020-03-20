@@ -50,7 +50,8 @@ URxvt.iso14755: true
 URxvt.iso14755_52: false
 
 !extensions
-URxvt.perl-ext-common: default,matcher,font-size
+URxvt.perl-ext-common: default,matcher
+!,font-size
 
 !font zoom
 URxvt.keysym.Control-Plus:     	perl:font-size:increase

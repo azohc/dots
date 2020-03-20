@@ -79,8 +79,6 @@ bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # bindsym $mod+F5 exec terminal -e 'mocp'
-# bindsym $mod+t exec --no-startup-id pkill compton
-# bindsym $mod+Ctrl+t exec --no-startup-id compton -b
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 bindsym Print exec --no-startup-id i3-scrot
 
@@ -129,6 +127,8 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+w layout toggle
+bindsym $mod+e layout toggle split
+
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -158,11 +158,11 @@ bindsym $mod+Ctrl+Left workspace prev
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
 set $ws1 ""
-set $ws2 ""
+set $ws2 ""
 set $ws3 ""
-set $ws4 ""
-set $ws5 ""
-set $ws6 ""
+set $ws4 ""
+set $ws5 ""
+set $ws6 ""
 set $ws7 VII
 set $ws8 VIII
 
@@ -248,10 +248,10 @@ for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="Firefox" title="Open File"] floating enable border pixel 2
 for_window [class="Firefox" title="File Upload"] floating enable border pixel 2
-for_window [title=".*Projucer"] move scratchpad
 for_window [class="(?i)Firefox" title="Open File"] resize set 700 300  
-for_window [title=".*Projucer"] resize set 900 720 
-for_window [title=".*Projucer"] move to position 30 420 
+for_window [title=".*Projucer"] move scratchpad
+for_window [title=".*Projucer"] resize set 800 666 
+for_window [title=".*Projucer"] move to position 100 50 
 for_window [instance="urxvt" title="youtube-dl"] floating enable border pixel 2
 for_window [instance="urxvt" title="youtube-dl"] resize set 666 111
 for_window [instance="urxvt" title="youtube-dl"] move to position 22 622
@@ -269,10 +269,17 @@ for_window [instance="feh"] floating enable border pixel 2
 for_window [title=".*File"] move to position 222 200
 for_window [title=".*File"] resize set 700 400
 
+for_window [instance="pcmanfm"] floating enable border pixel 2
+for_window [instance="pcmanfm"] resize set 660 420
+
+for_window [instance="viewnior"] floating enable border pixel 2
+for_window [instance="viewnior"] resize set 660 420
 
 for_window [instance="blueman-manager"] floating enable border pixel 2
 for_window [instance="blueman-manager"] resize set 400 200
 
+for_window [instance=".*go-for-it"] floating enable border pixel 2
+for_window [instance=".*go-for-it"] resize set 400 200
 
 
 # switch to workspace with urgent window automatically
@@ -285,8 +292,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # lock
-bindsym $mod+F1 exec --no-startup-id i3lock && systemctl suspend, mode "default"
-# i3lock -c 231117 -u # TODO Color
+bindsym $mod+F1 exec --no-startup-id i3lock -u -c 100d10 # && systemctl suspend, mode "default"
+
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -335,23 +342,21 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
-exec --no-startup-id xfce4-power-manager
 exec redshift -l 40.4168:-3.7038
 # exec --no-startup-id pamac-tray
 exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 10 
+# exec --no-startup-id xautolock -time 10 
 
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always xrdb -merge ~/.Xresources
-
-
-
+exec_always pkill picom; picom -b
 
 
 #################################################
@@ -362,11 +367,27 @@ exec_always xrdb -merge ~/.Xresources
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 #################################################
 
-set $high-color          #5D6E92
-set $inactive-bg-color   #100d10
-set $text-color          #e2c2c0
-set $inactive-text-color #A495AB
-set $urgent-bg-color     #C47D82
+# color0
+set $inactive-bg-color   #100d10 
+# color1
+set $high-color          #5D6E92 
+# color4
+set $urgent-bg-color     #C47D82 
+# color6
+set $inactive-text-color #A495AB 
+# color7
+set $text-color          #e2c2c0 
+
+# #col0
+# set $inactive-bg-color   #0d0d0b
+# #col1
+# set $text-color          #c0beb2
+# #col5
+# set $high-color          #887770
+# #col6
+# set $urgent-bg-color     #788768
+# #col3
+# set $inactive-text-color #3E4244
 
 # window colors
 #                       border              background          text                    indicator
@@ -410,8 +431,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color     
 #############################
 
 # Set inner/outer gaps
-gaps inner 14
-gaps outer -2
+gaps inner 11
+gaps outer 11
 
 # Additionally, you can issue commands with the following syntax. This is useful to bind keys to changing the gap size.
 # gaps inner|outer current|all set|plus|minus <px>
@@ -419,7 +440,7 @@ gaps outer -2
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-smart_gaps on
+# smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
