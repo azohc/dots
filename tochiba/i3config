@@ -33,9 +33,9 @@ bindsym $mod+m exec --no-startup-id morc_menu
 
 exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
-#exec --no-startup-id pulseaudio
-#exec --no-startup-id pa-applet
-#bindsym $mod+Ctrl+m exec pavucontrol
+# exec --no-startup-id pulseaudio
+# exec --no-startup-id pa-applet
+# bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -68,19 +68,24 @@ bindsym $mod+z exec subl
 bindsym $mod+shift+z exec subl ~/git/ ~/dox/notes
 
 # screenshots
-bindsym Print --release exec --no-startup-id i3-scrot -w
-bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
+bindsym Print --release exec --no-startup-id i3-scrot -e 'mv $f ~/img/sshots/'
+bindsym Shift+Print --release exec --no-startup-id i3-scrot -s -e 'mv $f ~/img/sshots/'
 
 # Screen brightness controls
 # bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 # bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+
+
+# Volume controls
+bindsym XF86AudioRaiseVolume --release exec "$bin/pavolume --up"
+bindsym XF86AudioLowerVolume --release exec "$bin/pavolume --down"
+bindsym XF86AudioMute --release exec "$bin/pavolume --togmute"
 
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # bindsym $mod+F5 exec terminal -e 'mocp'
 # bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
-bindsym Print exec --no-startup-id i3-scrot
 
 # bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
