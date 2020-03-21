@@ -15,7 +15,7 @@
 #
 ####################################################
 
-city="Leiden"
+city="Madrid"
 
 declare -A state_icons=( \
 	["Clear"]=""

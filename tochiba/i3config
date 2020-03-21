@@ -72,8 +72,8 @@ bindsym Print --release exec --no-startup-id i3-scrot -e 'mv $f ~/img/sshots/'
 bindsym Shift+Print --release exec --no-startup-id i3-scrot -s -e 'mv $f ~/img/sshots/'
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 
 # Volume controls
@@ -286,6 +286,11 @@ for_window [instance="blueman-manager"] resize set 400 200
 for_window [instance=".*go-for-it"] floating enable border pixel 2
 for_window [instance=".*go-for-it"] resize set 400 200
 
+for_window [instance="megasync"] floating enable border pixel 2
+for_window [instance="megasync"] move to position 960 -20
+
+for_window [title="Transfer Manager" instance="megasync"] floating enable border pixel 2
+for_window [title="Transfer Manager" instance="megasync"] move to position 300 100
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -352,7 +357,7 @@ exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
 exec redshift -l 40.4168:-3.7038
 # exec --no-startup-id pamac-tray
-exec --no-startup-id clipit
+# exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_green
@@ -362,7 +367,7 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always xrdb -merge ~/.Xresources
 exec_always pkill picom; picom -b
-
+exec_always megasync
 
 #################################################
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
