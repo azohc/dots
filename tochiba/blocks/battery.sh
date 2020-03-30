@@ -9,6 +9,7 @@ URGENT_VALUE=20
 
 if [[ "${BATTERY_STATE}" = "Charging" ]]; then
     echo "$BATTERY_POWER%"
+    exit
 elif [[ "${BATTERY_STATE}" = "Discharging" ]]; then
     echo "$BATTERY_POWER%"
 else

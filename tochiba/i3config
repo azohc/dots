@@ -6,7 +6,8 @@
 set $bin ~/.bin
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod4
+set $mod Mod1
+# set $mod Mod4
 
 font pango: Bitstream Vera Sans Mono 12
 
@@ -15,8 +16,8 @@ font pango: Bitstream Vera Sans Mono 12
 # workspace_layout tabbed <stacking|tabbed>
 
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-default_border pixel 2
-default_floating_border pixel 2
+default_border pixel 3
+default_floating_border pixel 3
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -24,15 +25,13 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# launch categorized menu
-bindsym $mod+m exec --no-startup-id morc_menu
-
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
 ################################################################################################
 
-exec --no-startup-id volumeicon
-bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
+bindsym $mod+Ctrl+m exec pavucontrol
+# exec --no-startup-id volumeicon
+# bindsym $mod+Ctrl+m exec terminal -e 'alsamixer'
 # exec --no-startup-id pulseaudio
 # exec --no-startup-id pa-applet
 # bindsym $mod+Ctrl+m exec pavucontrol
@@ -68,8 +67,8 @@ bindsym $mod+z exec subl
 bindsym $mod+shift+z exec subl ~/git/ ~/dox/notes
 
 # screenshots
-bindsym Print --release exec --no-startup-id i3-scrot -e 'mv $f ~/img/sshots/'
-bindsym Shift+Print --release exec --no-startup-id i3-scrot -s -e 'mv $f ~/img/sshots/'
+bindsym Print --release exec --no-startup-id i3-scrot -d 
+bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 
 # Screen brightness controls
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
@@ -85,7 +84,7 @@ bindsym XF86AudioMute --release exec "$bin/pavolume --togmute"
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
 # bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 # bindsym $mod+F5 exec terminal -e 'mocp'
-# bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
 
 # bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 # bindsym $mod+Shift+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
@@ -164,9 +163,9 @@ bindsym $mod+Ctrl+Left workspace prev
 #                 set $ws2 2:
 set $ws1 ""
 set $ws2 ""
-set $ws3 ""
-set $ws4 ""
-set $ws5 ""
+set $ws3 ""
+set $ws4 ""
+set $ws5 ""
 set $ws6 ""
 set $ws7 VII
 set $ws8 VIII
@@ -215,21 +214,23 @@ popup_during_fullscreen leave_fullscreen
 
 
 ########### border size
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 3
 
 # Open applications on specific workspaces
-assign [class="*go-for-it"] $ws6
-
 assign [class="Spotify"] $ws6
-assign [class="*go-for-it"] $ws5
+assign [class="Transmission-gtk"] $ws6
+
+# make windows sticky
+for_window [instance="vlc"] sticky enable
+
 
 # Open specific applications in floating mode
-for_window [title="alsamixer"] floating enable border pixel 2
+for_window [title="alsamixer"] floating enable border pixel 3
 for_window [class="calamares"] floating enable border normal
 for_window [class="Clipgrab"] floating enable
 for_window [title="File Transfer*"] floating enable
 for_window [class="fpakman"] floating enable
-for_window [class="Galculator"] floating enable border pixel 2
+for_window [class="Galculator"] floating enable border pixel 3
 for_window [class="GParted"] floating enable border normal
 for_window [title="i3_help"] floating enable sticky enable border normal
 for_window [class="Lightdm-settings"] floating enable
@@ -251,45 +252,47 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
-for_window [class="Firefox" title="Open File"] floating enable border pixel 2
-for_window [class="Firefox" title="File Upload"] floating enable border pixel 2
+for_window [class="Firefox" title="Open File"] floating enable border pixel 3
+for_window [class="Firefox" title="File Upload"] floating enable border pixel 3
 for_window [class="(?i)Firefox" title="Open File"] resize set 700 300  
 for_window [title=".*Projucer"] move scratchpad
 for_window [title=".*Projucer"] resize set 800 666 
 for_window [title=".*Projucer"] move to position 100 50 
-for_window [instance="urxvt" title="youtube-dl"] floating enable border pixel 2
+for_window [title="DemoRunner"] floating enable border pixel 3
+for_window [instance="urxvt" title="youtube-dl"] floating enable border pixel 3
 for_window [instance="urxvt" title="youtube-dl"] resize set 666 111
 for_window [instance="urxvt" title="youtube-dl"] move to position 22 622
-for_window [instance="urxvt" title="projecterm"] floating enable border pixel 2
-for_window [instance="urxvt" title="projecterm"] resize set 611 222
-for_window [instance="urxvt" title="projecterm"] move to position 670 522
-for_window [class="Transmission-gtk"] floating enable border pixel 2
+for_window [instance="urxvt" title="projecterm"] floating enable border pixel 3
+for_window [instance="urxvt" title="projecterm"] resize set 611 176
+for_window [instance="urxvt" title="projecterm"] move to position 1221 822
+# for_window [instance="urxvt" title="projecterm"] resize set 411 166
+# for_window [instance="urxvt" title="projecterm"] move to position 670 522
+for_window [class="Transmission-gtk"] floating enable border pixel 3
 for_window [class="Transmission-gtk"] resize set 666 400
 for_window [class="Transmission-gtk"] move to position 444 111
-assign [class="Transmission-gtk"] → 
 for_window [instance="gnuradio-companion" title="Properties"] move to position 600 200
 for_window [instance="top_block.py" title="Top Block"] floating enable 1
 for_window [instance="top_block.py" title="Top Block"] move to position 444 111
-for_window [instance="feh"] floating enable border pixel 2
+for_window [instance="feh"] floating enable border pixel 3
 for_window [title=".*File"] move to position 222 200
 for_window [title=".*File"] resize set 700 400
 
-for_window [instance="pcmanfm"] floating enable border pixel 2
+for_window [instance="pcmanfm"] floating enable border pixel 3
 for_window [instance="pcmanfm"] resize set 660 420
 
-for_window [instance="viewnior"] floating enable border pixel 2
+for_window [instance="viewnior"] floating enable border pixel 3
 for_window [instance="viewnior"] resize set 660 420
 
-for_window [instance="blueman-manager"] floating enable border pixel 2
+for_window [instance="blueman-manager"] floating enable border pixel 3
 for_window [instance="blueman-manager"] resize set 400 200
 
-for_window [instance=".*go-for-it"] floating enable border pixel 2
-for_window [instance=".*go-for-it"] resize set 400 200
+for_window [instance=".*go-for-it"] floating enable border pixel 3
+for_window [instance=".*go-for-it"] resize set 344 365
 
-for_window [instance="megasync"] floating enable border pixel 2
-for_window [instance="megasync"] move to position 960 -20
+for_window [instance="megasync"] floating enable border pixel 3
+for_window [instance="megasync"] move to position 960 11
 
-for_window [title="Transfer Manager" instance="megasync"] floating enable border pixel 2
+for_window [title="Transfer Manager" instance="megasync"] floating enable border pixel 3
 for_window [title="Transfer Manager" instance="megasync"] move to position 300 100
 
 # switch to workspace with urgent window automatically
@@ -339,10 +342,10 @@ mode "resize" {
         bindsym semicolon resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 11 px or 11 ppt
+        bindsym Down resize grow height 11 px or 11 ppt
+        bindsym Up resize shrink height 11 px or 11 ppt
+        bindsym Right resize grow width 11 px or 11 ppt
 
         # exit resize mode: Enter or Escape
         bindsym Return mode "default"
@@ -351,31 +354,35 @@ mode "resize" {
 
 
 # Autostart applications
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id picom -b
 exec --no-startup-id nm-applet
-exec redshift -l 40.4168:-3.7038
+exec redshift -l 40.4168:-3.7038 -t 5500K:3300K -b 1:0.4
 # exec --no-startup-id pamac-tray
 # exec --no-startup-id clipit
 exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xautolock -time 22 -locker "i3lock -u -c 100d10"
+exec megasync
+exec com.github.jmoerman.go-for-it 
+
+# enable tap to click & natural scrolling
+exec $bin/taptoclick
 
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec_always xrdb -merge ~/.Xresources
 exec_always pkill picom; picom -b
-exec_always megasync
 
-#################################################
+##################################################
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 # $11/$%&$$&%&$·&$·%$&%·%&·%$%$&"·%$&"·$&·"%·$"·&41
-# -...-.-.--..--.-     cOlOrs     .-.-.--.-.--..-.-
+# -...-.-.--..--.-     cOlOrs     .-.-.--.-.--..-.--
 # ?==?=?=?=?='¡¡'¡'¡'¡¡¡'¡¡¡¡'¡¡¡'¡'¡'¡'¡=?=?=?=??=
 # ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-#################################################
+##################################################
 
 # color0
 set $inactive-bg-color   #100d10 
@@ -388,16 +395,6 @@ set $inactive-text-color #A495AB
 # color7
 set $text-color          #e2c2c0 
 
-# #col0
-# set $inactive-bg-color   #0d0d0b
-# #col1
-# set $text-color          #c0beb2
-# #col5
-# set $high-color          #887770
-# #col6
-# set $urgent-bg-color     #788768
-# #col3
-# set $inactive-text-color #3E4244
 
 # window colors
 #                       border              background          text                    indicator
