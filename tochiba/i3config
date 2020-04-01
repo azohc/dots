@@ -443,8 +443,8 @@ client.urgent           $urgent-bg-color    $urgent-bg-color    $text-color     
     }
  }
 
-# hide/unhide i3status bar
-# bindsym $mod+m bar mode toggle
+# open morc menu
+bindsym $mod+m exec morc_menu
 
 #############################
 ### settings for i3-gaps: ###
