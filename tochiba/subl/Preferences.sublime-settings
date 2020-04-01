@@ -1,7 +1,7 @@
 {
 	"color_scheme": "Packages/Base16 Color Schemes/Themes/base16-bright.tmTheme",
 	"font_face": "Bitstream Vera Sans Mono",
-	"font_size": 9,
+	"font_size": 11,
 	"ignored_packages":
 	[
 		"Vintage"
