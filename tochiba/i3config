@@ -74,11 +74,20 @@ bindsym Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
+# sleep and lock
+bindsym XF86Sleep exec --no-startup-id i3lock -u -c 100d10 && systemctl suspend, mode "default"
 
 # Volume controls
 bindsym XF86AudioRaiseVolume --release exec "$bin/pavolume --up"
 bindsym XF86AudioLowerVolume --release exec "$bin/pavolume --down"
 bindsym XF86AudioMute --release exec "$bin/pavolume --togmute"
+
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause 
+bindsym XF86AudioStop exec playerctl stop       
+bindsym XF86AudioNext exec playerctl next       
+bindsym XF86AudioPrev exec playerctl previous   
+
 
 # Start Applications
 # bindsym $mod+Ctrl+b exec terminal -e 'bmenu'
@@ -116,9 +125,9 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# workspace back and forth (with/without active container)
+# workspace back and forth
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
+bindsym $mod+0xba workspace back_and_forth # tilde to switch between two ws
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
 
 # split orientation
@@ -133,15 +142,17 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+w layout toggle
 bindsym $mod+e layout toggle split
 
-
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
+
+# toggle sticky
+bindsym $mod+s sticky toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# toggle sticky
-bindsym $mod+Shift+s sticky toggle
+# toggle make floating and sticky
+bindsym $mod+Shift+s floating toggle; sticky toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -219,10 +230,12 @@ for_window [class="^.*"] border pixel 3
 # Open applications on specific workspaces
 assign [class="Spotify"] $ws6
 assign [class="Transmission-gtk"] $ws6
+assign [instance="Sampler"] $ws3
 
 # make windows sticky
 for_window [instance="vlc"] sticky enable
-
+for_window [instance=".*go-for-it"] sticky enable
+for_window [class="Spotify"] sticky enable
 
 # Open specific applications in floating mode
 for_window [title="alsamixer"] floating enable border pixel 3
@@ -263,8 +276,8 @@ for_window [instance="urxvt" title="youtube-dl"] floating enable border pixel 3
 for_window [instance="urxvt" title="youtube-dl"] resize set 666 111
 for_window [instance="urxvt" title="youtube-dl"] move to position 22 622
 for_window [instance="urxvt" title="projecterm"] floating enable border pixel 3
-for_window [instance="urxvt" title="projecterm"] resize set 611 176
-for_window [instance="urxvt" title="projecterm"] move to position 1221 822
+for_window [instance="urxvt" title="projecterm"] resize set 584 184
+for_window [instance="urxvt" title="projecterm"] move to position 1337 887
 # for_window [instance="urxvt" title="projecterm"] resize set 411 166
 # for_window [instance="urxvt" title="projecterm"] move to position 670 522
 for_window [class="Transmission-gtk"] floating enable border pixel 3
@@ -276,6 +289,10 @@ for_window [instance="top_block.py" title="Top Block"] move to position 444 111
 for_window [instance="feh"] floating enable border pixel 3
 for_window [title=".*File"] move to position 222 200
 for_window [title=".*File"] resize set 700 400
+for_window [class="Spotify"] floating enable border pixel 3
+for_window [class="Spotify"] move to position 1358 602
+for_window [class="Spotify"] resize set 554x194
+
 
 for_window [instance="pcmanfm"] floating enable border pixel 3
 for_window [instance="pcmanfm"] resize set 660 420
@@ -303,10 +320,6 @@ bindsym $mod+Shift+c reload
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
-# lock
-bindsym $mod+F1 exec --no-startup-id i3lock -u -c 100d10 && systemctl suspend, mode "default"
-
 
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"

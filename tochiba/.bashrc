@@ -144,6 +144,10 @@ ex ()
 
 export PATH=$PATH:~/.bin
 
+alias l='ls -a'
+alias vim='nvim'
+
+
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
