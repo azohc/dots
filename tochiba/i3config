@@ -6,8 +6,8 @@
 set $bin ~/.bin
 
 # Set mod key (Mod1=<Alt>, Mod4=<Super>)
-set $mod Mod1
-# set $mod Mod4
+# set $mod Mod1
+ set $mod Mod4
 
 font pango: Bitstream Vera Sans Mono 12
 
@@ -75,7 +75,8 @@ bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up
 bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
 
 # sleep and lock
-bindsym XF86Sleep exec --no-startup-id i3lock -u -c 100d10 && systemctl suspend, mode "default"
+# bindsym XF86Sleep exec --no-startup-id i3lock -u -c 100d10 && systemctl suspend, mode "default"
+bindsym XF86ScreenSaver exec --no-startup-id i3lock -u -c 100d10 && systemctl suspend, mode "default"
 
 # Volume controls
 bindsym XF86AudioRaiseVolume --release exec "$bin/pavolume --up"
@@ -464,7 +465,7 @@ gaps outer 11
 # gaps outer all plus 5
 
 # Smart gaps (gaps used if only more than one container on the workspace)
-# smart_gaps on
+smart_gaps on
 
 # Smart borders (draw borders around container only if it is not the only container on this workspace) 
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
